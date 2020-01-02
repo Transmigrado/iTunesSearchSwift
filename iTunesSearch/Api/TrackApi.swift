@@ -9,8 +9,10 @@
 import Foundation
 
 struct TrackApi : Api {
+ 
+    
    
-    func retrieve() -> String {
-        return "Hola"
+    func retrieve(urlString: String, handler: @escaping  ((String)->Void))  {
+        handler("hello world")
     }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Api {
-    func retrieve() -> String
+    func retrieve(urlString: String, handler: @escaping  ((String)->Void)) 
 }
