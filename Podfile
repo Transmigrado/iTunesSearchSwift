@@ -5,16 +5,20 @@ target 'iTunesSearch' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for iTunesSearch
+  pod 'Swinject'
 
   target 'iTunesSearchTests' do
-    inherit! :search_paths
-    # Pods for testing
+      inherit! :search_paths
+      # Pods for testing
+      pod 'Quick'
+      pod 'Nimble'
+      pod 'Swinject'
   end
 
   target 'iTunesSearchUITests' do
     inherit! :search_paths
     # Pods for testing
+    
   end
 
 end
