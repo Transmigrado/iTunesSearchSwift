@@ -29,10 +29,8 @@ class TrackApiTest: QuickSpec {
         }
         
         it("fetch correctly data"){
-            let fetcher = container.resolve(Api.self)!
-            fetcher.retrieve(urlString: "http://www.google.com") { response in
-                expect(response as? String).to(contain("hello world"))
-            }
+            let track = TrackModel()
+            expect(track.tracks.count).to(equal(20))
         }
     }
 }
