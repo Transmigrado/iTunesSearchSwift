@@ -16,6 +16,15 @@ struct Row: View {
     var track : Track
     var action : (()->())
     @Binding var isPlaying : Bool
+    @Binding var progress: Double
+    
+    var progressCircle : some View {
+        Circle()
+            .trim(from: 0.0, to: CGFloat(progress / 30.0))
+            .stroke(Color.blue, lineWidth: 2.0)
+            .frame(width: 60.0, height: 60.0)
+            
+    }
     
     var button : some View {
         ZStack{
@@ -24,6 +33,7 @@ struct Row: View {
                 .frame(width: 30, height: 30, alignment: .center)
                 .opacity(0.5)
             Image(systemName: isPlaying ? "pause" : "play")
+            progressCircle
         }
         .onTapGesture {
             self.action()

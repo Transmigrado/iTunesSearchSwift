@@ -32,7 +32,7 @@ struct TrackList: View {
                     ForEach(self.model.tracks){ track in
                         Row(track: track, action:{
                             self.audioModel.audioUrl = track.previewUrl
-                        }, isPlaying: self.$audioModel.isPlaying)
+                        }, isPlaying: self.$audioModel.isPlaying, progress: self.$audioModel.progress)
                     }
                    
                     if self.model.tracks.count > 0 {
