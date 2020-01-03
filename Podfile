@@ -8,6 +8,7 @@ target 'iTunesSearch' do
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'Swinject'
   pod 'lottie-ios'
+  pod 'SwiftAudio', '~> 0.11.2'
 
   target 'iTunesSearchTests' do
       inherit! :search_paths

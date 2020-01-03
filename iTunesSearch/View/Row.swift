@@ -21,6 +21,9 @@ struct Row: View {
                 .opacity(0.5)
             Image(systemName: "play")
         }
+        .onTapGesture {
+            debugPrint("hola")
+        }
     }
     
     var body: some View {
