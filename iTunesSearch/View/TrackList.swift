@@ -11,8 +11,15 @@ import SwiftUI
 struct TrackList: View {
     
        @ObservedObject var model : TrackModel
+    
+        var loading : some View {
+            ZStack{
+                LottieView()
+                .frame(width: 264, height: 150.0, alignment: .center)
+            }
+            .frame(minWidth: 0.0, maxWidth: .infinity)
+        }
        
-
        var body: some View {
             List{
               ForEach(model.tracks){ track in
@@ -20,7 +27,7 @@ struct TrackList: View {
                        Row(track: track)
                   }
                }
-               Text("Cargando")
+                loading
             }
                
        }

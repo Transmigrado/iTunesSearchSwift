@@ -29,6 +29,8 @@
 		4F9C3FD223BEFE88005DEB98 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FD123BEFE88005DEB98 /* Empty.swift */; };
 		4F9C3FD423BF7585005DEB98 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FD323BF7585005DEB98 /* TrackList.swift */; };
 		4F9C3FD623BF8470005DEB98 /* SearchTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FD523BF8470005DEB98 /* SearchTrack.swift */; };
+		4F9C3FD823BF9FE4005DEB98 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FD723BF9FE4005DEB98 /* LottieView.swift */; };
+		4F9C3FDB23BFA0E0005DEB98 /* loading_music.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C3FDA23BFA0E0005DEB98 /* loading_music.json */; };
 		7B33E294F4EA04139A2FC655 /* Pods_iTunesSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19553BE3FB0AB17A68DA8C5A /* Pods_iTunesSearchTests.framework */; };
 		EA15B2A091C65356A9B6DA4A /* Pods_iTunesSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48667AC4F4E5385070AC1EDD /* Pods_iTunesSearchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 		4F9C3FD123BEFE88005DEB98 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		4F9C3FD323BF7585005DEB98 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
 		4F9C3FD523BF8470005DEB98 /* SearchTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTrack.swift; sourceTree = "<group>"; };
+		4F9C3FD723BF9FE4005DEB98 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		4F9C3FDA23BFA0E0005DEB98 /* loading_music.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_music.json; sourceTree = "<group>"; };
 		57F468676CA2617425A55E36 /* Pods-iTunesSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchUITests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesSearchUITests/Pods-iTunesSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		720CA24F4066C3CF005ADBFC /* Pods_iTunesSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F6B96E16550D88A53242E0 /* Pods-iTunesSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchTests.release.xcconfig"; path = "Target Support Files/Pods-iTunesSearchTests/Pods-iTunesSearchTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		4F9C3F8123BE7F89005DEB98 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				4F9C3FDA23BFA0E0005DEB98 /* loading_music.json */,
+				4F9C3FD923BFA0C8005DEB98 /* Assets */,
 				4F9C3FCE23BEF86E005DEB98 /* Screen */,
 				4F9C3FC823BEF33F005DEB98 /* View */,
 				4F9C3FBE23BEB183005DEB98 /* Utility */,
@@ -228,6 +234,7 @@
 				4F9C3FD323BF7585005DEB98 /* TrackList.swift */,
 				4F9C3FCC23BEF7FF005DEB98 /* Row.swift */,
 				4F9C3FD123BEFE88005DEB98 /* Empty.swift */,
+				4F9C3FD723BF9FE4005DEB98 /* LottieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +246,13 @@
 				4F9C3FD523BF8470005DEB98 /* SearchTrack.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		4F9C3FD923BFA0C8005DEB98 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		64DBEB5B5CCDFCA279531AFF /* Pods */ = {
@@ -371,6 +385,7 @@
 			files = (
 				4F9C3F8F23BE7F8A005DEB98 /* LaunchScreen.storyboard in Resources */,
 				4F9C3F8C23BE7F8A005DEB98 /* Preview Assets.xcassets in Resources */,
+				4F9C3FDB23BFA0E0005DEB98 /* loading_music.json in Resources */,
 				4F9C3F8923BE7F8A005DEB98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +528,7 @@
 				4F9C3F8723BE7F89005DEB98 /* ContentView.swift in Sources */,
 				4F9C3FBA23BEA06F005DEB98 /* Track.swift in Sources */,
 				4F9C3FCD23BEF7FF005DEB98 /* Row.swift in Sources */,
+				4F9C3FD823BF9FE4005DEB98 /* LottieView.swift in Sources */,
 				4F9C3FC523BEB982005DEB98 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
