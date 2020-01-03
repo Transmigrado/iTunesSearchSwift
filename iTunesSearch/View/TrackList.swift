@@ -30,9 +30,10 @@ struct TrackList: View {
                 List{
                     
                     ForEach(self.model.tracks){ track in
-                        Row(track: track, action:{
+                        Row(track: track, trackId: self.$audioModel.trackId, progress: self.$audioModel.progress){
                             self.audioModel.audioUrl = track.previewUrl
-                        }, isPlaying: self.$audioModel.isPlaying, progress: self.$audioModel.progress)
+                            self.audioModel.trackId = track.trackId
+                        }
                     }
                    
                     if self.model.tracks.count > 0 {

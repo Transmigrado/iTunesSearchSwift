@@ -13,7 +13,7 @@ import Combine
 class AudioModel : ObservableObject {
      
     @Published var progress = 0.0
-    @Published var isPlaying = false
+    @Published var trackId = 0
     
     var audioPlayer = AudioPlayer()
     var audioUrl = "" {
@@ -21,7 +21,6 @@ class AudioModel : ObservableObject {
             let audioItem = DefaultAudioItem(audioUrl: audioUrl, sourceType: .stream)
             do{
                 _ = try audioPlayer.load(item: audioItem, playWhenReady: true)
-                isPlaying = true
             } catch let error {
                 debugPrint(error)
             }

@@ -11,12 +11,16 @@ import URLImage
 
 struct Row: View {
     
-   
-    
     var track : Track
-    var action : (()->())
-    @Binding var isPlaying : Bool
+    @Binding var trackId : Int
     @Binding var progress: Double
+    var action : (()->())
+    
+    private var isPlaying :Bool {
+        get {
+            trackId == track.trackId
+        }
+    }
     
     var progressCircle : some View {
         Circle()
@@ -33,7 +37,9 @@ struct Row: View {
                 .frame(width: 30, height: 30, alignment: .center)
                 .opacity(0.5)
             Image(systemName: isPlaying ? "pause" : "play")
-            progressCircle
+            if isPlaying {
+                progressCircle
+            }
         }
         .onTapGesture {
             self.action()
