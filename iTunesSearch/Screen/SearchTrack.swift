@@ -17,7 +17,7 @@ struct SearchTrack: View {
         let view: TrackList = container.resolve(from: .trackList)
         return view
     }
-    
+   
   var body: some View {
       NavigationView{
           VStack{
