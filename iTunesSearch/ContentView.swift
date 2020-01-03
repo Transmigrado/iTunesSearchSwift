@@ -7,15 +7,16 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    
+    @ObservedObject var model : TrackModel
+  
     var body: some View {
-        Text("Hello World")
+        List(model.tracks){ track in
+            Text(track.trackName)
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

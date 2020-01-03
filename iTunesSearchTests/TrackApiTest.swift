@@ -13,10 +13,10 @@ import Swinject
 
 class TrackApiTest: QuickSpec {
     
-    struct mockTrackAPi: Api {
+    struct MockTrackAPi: Api {
               
        func retrieve(urlString: String, handler: @escaping ((Any) -> Void)) {
-           handler("hello world")
+           handler(["Hola"])
        }
     }
     
@@ -25,12 +25,14 @@ class TrackApiTest: QuickSpec {
         var container: Container!
         beforeEach {
             container = Container()
-            container.register(Api.self) { _ in mockTrackAPi() }
+            container.register(from:.trackModel, value: TrackModel(api: MockTrackAPi()))
+            container.register(from: .root, value: ContentView(model: container.resolve(from: .trackModel)))
         }
         
         it("fetch correctly data"){
-            let track = TrackModel()
-            expect(track.tracks.count).to(equal(20))
+          
+            let model : TrackModel = container.resolve(from: .trackModel)
+            debugPrint(model.tracks)
         }
     }
 }

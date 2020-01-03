@@ -13,14 +13,14 @@ class TrackModel : ObservableObject {
     
     @Published var tracks:[Track] = []
     
-    let api = TrackApi()
+    let api : Api
     
-    init(){
+    init(api : Api){
+        self.api = api
         retrieve()
     }
     
     func retrieve(){
-        
         api.retrieve(urlString: Constants.baseUrl) { response in
             self.tracks = (response as! Page).results
         }

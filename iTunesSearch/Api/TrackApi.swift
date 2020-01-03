@@ -9,14 +9,18 @@
 import Foundation
 import Alamofire
 
+protocol Api {
+    func retrieve(urlString: String, handler: @escaping  ((Any)->Void))
+}
+
 struct TrackApi : Api {
     
     func retrieve(urlString: String, handler: @escaping ((Any)->Void))  {
-
+       
         AF.request(URL(string: urlString)!)
             .responseJSON { response in
                 do {
-                    let data = try JSONDecoder().decode(Track.self, from: response.data!)
+                    let data = try JSONDecoder().decode(Page.self, from: response.data!)
                     handler(data)
                 } catch {
                    
