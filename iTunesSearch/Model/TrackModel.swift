@@ -14,8 +14,15 @@ class TrackModel : ObservableObject {
     @Published var tracks:[Track] = []
     @Published var isLoading = false
     
+    var page: Int = 0 {
+        didSet{
+            retrieve(term: searchText)
+        }
+    }
+    
     var searchText = "" {
         didSet {
+            page = 0
             retrieve(term: searchText)
         }
     }
@@ -28,8 +35,8 @@ class TrackModel : ObservableObject {
     
     func retrieve(term:String){
         isLoading = true
-        api.retrieve(urlString: "\(Constants.baseUrl)\(term)") { response in
-            self.tracks = (response as! Page).results
+        api.retrieve(urlString: "\(Constants.baseUrl)\(term)&offset=\(page * 20)") { response in
+            self.tracks.append(contentsOf: response.results)
             self.isLoading = false
         }
     }

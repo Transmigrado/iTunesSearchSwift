@@ -156,7 +156,6 @@
 		4F9C3F8123BE7F89005DEB98 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
-				4F9C3FDA23BFA0E0005DEB98 /* loading_music.json */,
 				4F9C3FD923BFA0C8005DEB98 /* Assets */,
 				4F9C3FCE23BEF86E005DEB98 /* Screen */,
 				4F9C3FC823BEF33F005DEB98 /* View */,
@@ -251,6 +250,7 @@
 		4F9C3FD923BFA0C8005DEB98 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4F9C3FDA23BFA0E0005DEB98 /* loading_music.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";

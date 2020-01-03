@@ -19,7 +19,7 @@ struct TrackList: View {
             }
             .frame(minWidth: 0.0, maxWidth: .infinity)
             .onAppear{
-                debugPrint("Hola")
+                self.model.page = self.model.page + 1
             }
         }
        
