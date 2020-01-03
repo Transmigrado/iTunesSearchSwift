@@ -16,6 +16,8 @@ enum InjectName:String {
     case trackList
     case trackModel
     case detailTrack
+    case trackModelDetail
+    case trackListDetail
 }
 
 extension Container {

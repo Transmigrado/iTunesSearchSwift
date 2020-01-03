@@ -17,7 +17,8 @@ struct DetailTrack: View {
     
     
     var list: some View {
-      let view: TrackList = container.resolve(from: .trackList)
+      let view: TrackList = container.resolve(from: .trackListDetail)
+      view.model.searchText = track.collectionName
       return view
     }
     
