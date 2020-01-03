@@ -165,7 +165,7 @@
 		4F9C3F9823BE7F8A005DEB98 /* iTunesSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F9C3FBF23BEB71F005DEB98 /* files */,
+				4F9C3FC023BEB742005DEB98 /* response-success.json */,
 				4F9C3F9B23BE7F8A005DEB98 /* Info.plist */,
 				4F9C3FB723BE8FB8005DEB98 /* TrackApiTest.swift */,
 			);
@@ -206,14 +206,6 @@
 				4F9C3FC623BEE908005DEB98 /* Inject.swift */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		4F9C3FBF23BEB71F005DEB98 /* files */ = {
-			isa = PBXGroup;
-			children = (
-				4F9C3FC023BEB742005DEB98 /* response-success.json */,
-			);
-			path = files;
 			sourceTree = "<group>";
 		};
 		64DBEB5B5CCDFCA279531AFF /* Pods */ = {
