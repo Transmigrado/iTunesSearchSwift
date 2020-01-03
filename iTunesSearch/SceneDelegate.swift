@@ -25,9 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         
         container.register(from:.trackModel, value: TrackModel(api: TrackApi()))
-        container.register(from: .root, value: ContentView(model: container.resolve(from: .trackModel)))
+        container.register(from: .root, value: TrackList(model: container.resolve(from: .trackModel)))
         
-        let contentView: ContentView = container.resolve(from: .root)
+        let contentView = ContentView(container:container)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
