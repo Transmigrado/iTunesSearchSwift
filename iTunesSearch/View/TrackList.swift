@@ -10,25 +10,34 @@ import SwiftUI
 
 struct TrackList: View {
     
-       @ObservedObject var model : TrackModel
-    
-        var loading : some View {
+        @ObservedObject var model : TrackModel
+        
+        var loadingView : some View {
             ZStack{
                 LottieView()
                 .frame(width: 264, height: 150.0, alignment: .center)
             }
             .frame(minWidth: 0.0, maxWidth: .infinity)
+            .onAppear{
+                debugPrint("Hola")
+            }
         }
        
        var body: some View {
-            List{
-              ForEach(model.tracks){ track in
-                  NavigationLink(destination: DetailTrack(track:track)){
-                       Row(track: track)
-                  }
-               }
-                loading
+            GeometryReader { geometry in
+                List{
+                                    
+                    ForEach(self.model.tracks){ track in
+                      Row(track: track)
+                    }
+                  
+                   
+                    if self.model.tracks.count > 0 {
+                           self.loadingView
+                      }
+                }
+              
+                 
             }
-               
        }
 }

@@ -12,6 +12,8 @@ import Alamofire
 class TrackModel : ObservableObject {
     
     @Published var tracks:[Track] = []
+    @Published var isLoading = false
+    
     var searchText = "" {
         didSet {
             retrieve(term: searchText)
@@ -25,8 +27,10 @@ class TrackModel : ObservableObject {
     }
     
     func retrieve(term:String){
+        isLoading = true
         api.retrieve(urlString: "\(Constants.baseUrl)\(term)") { response in
             self.tracks = (response as! Page).results
+            self.isLoading = false
         }
     }
     

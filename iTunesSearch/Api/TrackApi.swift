@@ -10,21 +10,36 @@ import Foundation
 import Alamofire
 
 protocol Api {
-    func retrieve(urlString: String, handler: @escaping  ((Any)->Void))
+    func retrieve(urlString: String, handler: @escaping  ((Page)->Void))
 }
 
-struct TrackApi : Api {
+class TrackApi : Api {
     
-    func retrieve(urlString: String, handler: @escaping ((Any)->Void))  {
-       
-        AF.request(URL(string: urlString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!)!)
+    var request : DataRequest?
+    
+    func retrieve(urlString: String, handler: @escaping ((Page)->Void))  {
+        
+        if request != nil {
+            request?.cancel()
+        }
+      
+        request = AF.request(URL(string: urlString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!)!)
             .responseJSON { response in
-                do {
-                    let data = try JSONDecoder().decode(Page.self, from: response.data!)
-                    handler(data)
-                } catch {
-                   
+                
+                switch response.result {
+                    case .success(_):
+                      do {
+                        let data = try JSONDecoder().decode(Page.self, from: response.data!)
+                        handler(data)
+                      } catch let error {
+                         debugPrint(error)
+                      }
+                    case .failure(_): break
+                    
                 }
+                
             }
+               
+                
     }
 }
