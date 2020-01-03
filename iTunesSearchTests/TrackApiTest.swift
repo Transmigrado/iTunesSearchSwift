@@ -44,12 +44,13 @@ class TrackApiTest: QuickSpec {
         beforeEach {
             container = Container()
             container.register(from:.trackModel, value: TrackModel(api: MockTrackAPi()))
-            container.register(from: .root, value: ContentView(model: container.resolve(from: .trackModel)))
+           
         }
         
-        it("fetch correctly data"){
+        it("fetch correctly data when searchText change"){
           
             let model : TrackModel = container.resolve(from: .trackModel)
+            model.searchText = "Billie Eilish"
             let firstItem = model.tracks.first
             expect(firstItem?.artistName).to(equal("Californication"))
         }

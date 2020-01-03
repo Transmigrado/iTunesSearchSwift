@@ -11,17 +11,18 @@ import Swinject
 
 struct SearchTrack: View {
      
-    var container: Container
+  var container: Container
     
-    var list: some View {
-        let view: TrackList = container.resolve(from: .trackList)
-        return view
-    }
+  var list: some View {
+    let view: TrackList = container.resolve(from: .trackList)
+    return view
+  }
    
   var body: some View {
       NavigationView{
           VStack{
              list
+                .navigationBarTitle("Buscar")
           }
       }
   }
