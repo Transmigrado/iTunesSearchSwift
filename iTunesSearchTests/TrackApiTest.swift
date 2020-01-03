@@ -16,7 +16,7 @@ class TrackApiTest: QuickSpec {
     struct MockTrackAPi: Api {
             
         
-       func retrieve(urlString: String, handler: @escaping ((Any) -> Void)) {
+       func retrieve(urlString: String, handler: @escaping ((Page) -> Void)) {
         let file = """
              {
                 "resultCount":1,
