@@ -15,11 +15,12 @@ struct Row: View {
     
     var body: some View {
         HStack{
-            URLImage(URL(string: track.artworkUrl30)!)
+            URLImage(URL(string: track.artworkUrl100)!)
             VStack(alignment: .leading, spacing: 0.0){
-                Text(track.artistName)
-                    .bold()
                 Text(track.trackName)
+                    .bold()
+                    .lineLimit(2)
+                Text(track.artistName)
             }
         }
     }

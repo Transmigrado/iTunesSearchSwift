@@ -17,7 +17,6 @@ class TrackModel : ObservableObject {
     
     init(api : Api){
         self.api = api
-        retrieve()
     }
     
     func retrieve(){
