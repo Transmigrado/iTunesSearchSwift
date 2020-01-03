@@ -11,6 +11,7 @@ import SwiftUI
 struct TrackList: View {
     
        @ObservedObject var model : TrackModel
+       
 
        var body: some View {
             List(model.tracks){ track in

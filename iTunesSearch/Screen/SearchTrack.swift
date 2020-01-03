@@ -11,9 +11,8 @@ import Swinject
 
 struct SearchTrack: View {
      
-  var container: Container
-
-    @State var searchText = ""
+   var container: Container
+   @State var searchText = ""
     
     var searchBar : some View {
      HStack {
@@ -39,6 +38,7 @@ struct SearchTrack: View {
     
   var list: some View {
     let view: TrackList = container.resolve(from: .trackList)
+    view.model.searchText = self.searchText
     return view
   }
    
