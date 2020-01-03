@@ -23,7 +23,11 @@ target 'iTunesSearch' do
   target 'iTunesSearchUITests' do
     inherit! :search_paths
     # Pods for testing
-    
+    use_frameworks!
+         pod 'Alamofire', '~> 5.0.0-rc.3'
+         pod 'Quick'
+         pod 'Nimble'
+         pod 'Swinject'
   end
 
 end
