@@ -17,7 +17,7 @@ struct TrackApi : Api {
     
     func retrieve(urlString: String, handler: @escaping ((Any)->Void))  {
        
-        AF.request(URL(string: urlString)!)
+        AF.request(URL(string: urlString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!)!)
             .responseJSON { response in
                 do {
                     let data = try JSONDecoder().decode(Page.self, from: response.data!)

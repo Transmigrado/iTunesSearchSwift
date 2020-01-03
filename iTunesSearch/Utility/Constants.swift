@@ -9,5 +9,5 @@
 import Foundation
 
 struct Constants {
-    static let baseUrl = "https://itunes.apple.com/search?mediaType=music&limit=20&term=in+utero"
+    static let baseUrl = "https://itunes.apple.com/search?mediaType=music&limit=20&term="
 }

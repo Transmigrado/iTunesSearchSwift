@@ -12,6 +12,11 @@ import Alamofire
 class TrackModel : ObservableObject {
     
     @Published var tracks:[Track] = []
+    var searchText = "" {
+        didSet {
+            retrieve(term: searchText)
+        }
+    }
     
     let api : Api
     
@@ -19,8 +24,8 @@ class TrackModel : ObservableObject {
         self.api = api
     }
     
-    func retrieve(){
-        api.retrieve(urlString: Constants.baseUrl) { response in
+    func retrieve(term:String){
+        api.retrieve(urlString: "\(Constants.baseUrl)\(term)") { response in
             self.tracks = (response as! Page).results
         }
     }

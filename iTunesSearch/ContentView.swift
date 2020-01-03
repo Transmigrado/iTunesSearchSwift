@@ -11,8 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var model : TrackModel
-    @State var searchText: String = ""
-    
+ 
     var viewForResult : some View {
         List(model.tracks){ track in
             NavigationLink(destination: DetailTrack()){
@@ -25,13 +24,13 @@ struct ContentView: View {
         HStack {
            HStack {
                Image(systemName: "magnifyingglass")
-               TextField("Buscar", text: $searchText)
+            TextField("Buscar", text: self.$model.searchText)
                     .foregroundColor(.primary)
                Button(action: {
-                   self.searchText = ""
+                   self.model.searchText = ""
                }) {
                    Image(systemName: "xmark.circle.fill")
-                    .opacity(searchText == "" ? 0 : 1)
+                    .opacity(self.model.searchText == "" ? 0 : 1)
                }
            }
            .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
