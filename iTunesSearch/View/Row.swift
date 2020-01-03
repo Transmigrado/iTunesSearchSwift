@@ -21,9 +21,9 @@ struct Row: View {
     var progressCircle : some View {
         Circle()
             .trim(from: 0.0, to: CGFloat(progress / 30.0))
-            .stroke(Color.blue, lineWidth: 2.0)
-            .frame(width: 60.0, height: 60.0)
-            
+            .stroke(Color.blue, lineWidth: 4.0)
+            .frame(width: 30.0, height: 30.0)
+            .rotationEffect(.degrees(90))
     }
     
     var button : some View {
