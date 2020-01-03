@@ -28,18 +28,16 @@ struct TrackList: View {
             GeometryReader { geometry in
                 
                 List{
-                           Text("\(self.audioModel.progress)")
+                    
                     ForEach(self.model.tracks){ track in
-                      Row(track: track)
+                        Row(track: track, action:{
+                            self.audioModel.audioUrl = track.previewUrl
+                        }, isPlaying: self.$audioModel.isPlaying)
                     }
-                  
                    
                     if self.model.tracks.count > 0 {
-                           self.loadingView
-                      }
-                }
-                .onAppear{
-                    self.audioModel.audioUrl = "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview82/v4/5d/71/ef/5d71efb7-2c40-0490-f137-9b86372f8fd5/mzaf_7873689062499888403.plus.aac.p.m4a"
+                        self.loadingView
+                    }
                 }
               
                  

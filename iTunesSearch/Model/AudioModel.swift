@@ -13,14 +13,15 @@ import Combine
 class AudioModel : ObservableObject {
      
     @Published var progress = 0.0
+    @Published var isPlaying = false
     
     var audioPlayer = AudioPlayer()
     var audioUrl = "" {
         didSet{
-             debugPrint(audioUrl)
             let audioItem = DefaultAudioItem(audioUrl: audioUrl, sourceType: .stream)
             do{
                 _ = try audioPlayer.load(item: audioItem, playWhenReady: true)
+                isPlaying = true
             } catch let error {
                 debugPrint(error)
             }
@@ -32,7 +33,9 @@ class AudioModel : ObservableObject {
      
       
         audioPlayer.event.secondElapse.addListener(self) { event in
-            self.progress = Double(event)
+            DispatchQueue.main.async {
+                self.progress = Double(event)
+            }
         }
      
         

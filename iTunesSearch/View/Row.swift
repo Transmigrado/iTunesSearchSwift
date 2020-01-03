@@ -11,7 +11,11 @@ import URLImage
 
 struct Row: View {
     
+   
+    
     var track : Track
+    var action : (()->())
+    @Binding var isPlaying : Bool
     
     var button : some View {
         ZStack{
@@ -19,10 +23,10 @@ struct Row: View {
                 .foregroundColor(Color.white)
                 .frame(width: 30, height: 30, alignment: .center)
                 .opacity(0.5)
-            Image(systemName: "play")
+            Image(systemName: isPlaying ? "pause" : "play")
         }
         .onTapGesture {
-            debugPrint("hola")
+            self.action()
         }
     }
     
