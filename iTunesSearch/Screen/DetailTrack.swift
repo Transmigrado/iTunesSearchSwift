@@ -7,18 +7,41 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct DetailTrack: View {
     
     var track:Track
     
+    var header: some View {
+        ZStack{
+            URLImage(URL(string: track.artworkUrl100)!)
+                .frame(minWidth: 0.0, maxWidth: .infinity)
+                .frame( height: 100.0, alignment: .center)
+                .blur(radius: 10)
+                .scaleEffect(5.0)
+            URLImage(URL(string: track.artworkUrl100)!)
+                .shadow(radius: 10.0)
+        }
+        .frame(minWidth: 0.0, maxWidth: .infinity, maxHeight: 200.0, alignment: .center)
+        .mask(Rectangle())
+    }
+    
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
+          header
+          VStack(alignment: .leading){
+            Text(track.trackName)
+                .bold()
+                .font(.system(size: 22.0))
             Text(track.collectionName)
             Text(track.artistName)
-            Text(track.trackName)
-            Text(track.country)
-        }
+            Text("Pais: \(track.country)")
+          }
+          .padding(10.0)
+      }
+      .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 0.0, maxHeight: .infinity, alignment: .topLeading)
+ 
     }
 }
 
