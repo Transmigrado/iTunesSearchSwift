@@ -8,10 +8,18 @@
 
 import SwiftUI
 import URLImage
+import Swinject
 
 struct DetailTrack: View {
     
+    var container: Container
     var track:Track
+    
+    
+    var list: some View {
+      let view: TrackList = container.resolve(from: .trackList)
+      return view
+    }
     
     var header: some View {
         ZStack{
@@ -39,6 +47,7 @@ struct DetailTrack: View {
             Text("Pais: \(track.country)")
           }
           .padding(10.0)
+          list
       }
       .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 0.0, maxHeight: .infinity, alignment: .topLeading)
  

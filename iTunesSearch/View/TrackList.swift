@@ -7,9 +7,11 @@
 //
 
 import SwiftUI
+import Swinject
 
 struct TrackList: View {
-    
+        
+        var container: Container
         @ObservedObject var model : TrackModel
         @ObservedObject var audioModel = AudioModel()
         
@@ -30,7 +32,7 @@ struct TrackList: View {
                 List{
                     
                     ForEach(self.model.tracks){ track in
-                        NavigationLink(destination: DetailTrack(track:track)){
+                        NavigationLink(destination: DetailTrack(container:self.container, track:track)){
                             Row(track: track, trackId: self.$audioModel.trackId, progress: self.$audioModel.progress){
                                 self.audioModel.audioUrl = track.previewUrl
                                 self.audioModel.trackId = track.trackId
