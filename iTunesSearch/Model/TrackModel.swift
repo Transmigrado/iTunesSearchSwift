@@ -23,7 +23,12 @@ class TrackModel : ObservableObject {
     var searchText = "" {
         didSet {
             page = 0
-            retrieve(term: searchText)
+            if searchText != ""{
+                retrieve(term: searchText)
+            } else {
+                tracks = []
+            }
+            
         }
     }
     
