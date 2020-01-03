@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import URLImage
 
 struct ContentView: View {
     
@@ -15,7 +16,12 @@ struct ContentView: View {
   
     var body: some View {
         List(model.tracks){ track in
-            Text(track.trackName)
+            VStack(alignment: .leading, spacing: 0.0){
+                URLImage(URL(string: track.artworkUrl30)!)
+                Text(track.artistName)
+                    .bold()
+                Text(track.trackName)
+            }
         }
     }
 }

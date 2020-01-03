@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		4F9C3FC323BEB95D005DEB98 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FC223BEB95D005DEB98 /* TrackModel.swift */; };
 		4F9C3FC523BEB982005DEB98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FC423BEB982005DEB98 /* Constants.swift */; };
 		4F9C3FC723BEE908005DEB98 /* Inject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FC623BEE908005DEB98 /* Inject.swift */; };
+		4F9C3FCB23BEF4D8005DEB98 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4F9C3FCA23BEF4D8005DEB98 /* URLImage */; };
 		7B33E294F4EA04139A2FC655 /* Pods_iTunesSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19553BE3FB0AB17A68DA8C5A /* Pods_iTunesSearchTests.framework */; };
 		EA15B2A091C65356A9B6DA4A /* Pods_iTunesSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48667AC4F4E5385070AC1EDD /* Pods_iTunesSearchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F9C3FCB23BEF4D8005DEB98 /* URLImage in Frameworks */,
 				03CBAFA2204ECDBE6911FDFA /* Pods_iTunesSearch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +142,7 @@
 		4F9C3F8123BE7F89005DEB98 /* iTunesSearch */ = {
 			isa = PBXGroup;
 			children = (
+				4F9C3FC823BEF33F005DEB98 /* View */,
 				4F9C3FBE23BEB183005DEB98 /* Utility */,
 				4F9C3FBB23BEB09E005DEB98 /* Api */,
 				4F9C3FB223BE8F64005DEB98 /* Model */,
@@ -208,6 +211,13 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		4F9C3FC823BEF33F005DEB98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		64DBEB5B5CCDFCA279531AFF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +249,9 @@
 			dependencies = (
 			);
 			name = iTunesSearch;
+			packageProductDependencies = (
+				4F9C3FCA23BEF4D8005DEB98 /* URLImage */,
+			);
 			productName = iTunesSearch;
 			productReference = 4F9C3F7F23BE7F89005DEB98 /* iTunesSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -314,6 +327,9 @@
 				Base,
 			);
 			mainGroup = 4F9C3F7623BE7F89005DEB98;
+			packageReferences = (
+				4F9C3FC923BEF4D8005DEB98 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 4F9C3F8023BE7F89005DEB98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -800,6 +816,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F9C3FC923BEF4D8005DEB98 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F9C3FCA23BEF4D8005DEB98 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F9C3FC923BEF4D8005DEB98 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4F9C3F7723BE7F89005DEB98 /* Project object */;
 }
