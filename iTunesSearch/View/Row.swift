@@ -16,6 +16,7 @@ struct Row: View {
     var body: some View {
         HStack{
             URLImage(URL(string: track.artworkUrl100)!)
+                .frame(width: 100.0, height: 100.0, alignment: .center)
             VStack(alignment: .leading, spacing: 0.0){
                 Text(track.trackName)
                     .bold()

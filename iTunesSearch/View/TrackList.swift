@@ -14,10 +14,13 @@ struct TrackList: View {
        
 
        var body: some View {
-            List(model.tracks){ track in
-               NavigationLink(destination: DetailTrack(track:track)){
-                    Row(track: track)
+            List{
+              ForEach(model.tracks){ track in
+                  NavigationLink(destination: DetailTrack(track:track)){
+                       Row(track: track)
+                  }
                }
+               Text("Cargando")
             }
                
        }
