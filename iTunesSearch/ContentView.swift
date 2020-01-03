@@ -7,23 +7,19 @@
 //
 
 import SwiftUI
-import Combine
-import URLImage
 
 struct ContentView: View {
     
     @ObservedObject var model : TrackModel
   
     var body: some View {
-        List(model.tracks){ track in
-            HStack{
-                URLImage(URL(string: track.artworkUrl30)!)
-                VStack(alignment: .leading, spacing: 0.0){
-                    Text(track.artistName)
-                        .bold()
-                    Text(track.trackName)
+        NavigationView{
+            List(model.tracks){ track in
+                NavigationLink(destination: DetailTrack()){
+                  Row(track: track)
                 }
             }
+            .navigationBarTitle("Buscar")
         }
     }
 }
