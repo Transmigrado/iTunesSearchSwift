@@ -29,16 +29,10 @@ class AudioModel : ObservableObject {
     
 
     init() {
-     
-      
         audioPlayer.event.secondElapse.addListener(self) { event in
             DispatchQueue.main.async {
                 self.progress = Double(event)
             }
         }
-     
-        
     }
-    
-    
 }

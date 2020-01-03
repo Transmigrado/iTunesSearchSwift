@@ -30,9 +30,11 @@ struct TrackList: View {
                 List{
                     
                     ForEach(self.model.tracks){ track in
-                        Row(track: track, trackId: self.$audioModel.trackId, progress: self.$audioModel.progress){
-                            self.audioModel.audioUrl = track.previewUrl
-                            self.audioModel.trackId = track.trackId
+                        NavigationLink(destination: DetailTrack(track:track)){
+                            Row(track: track, trackId: self.$audioModel.trackId, progress: self.$audioModel.progress){
+                                self.audioModel.audioUrl = track.previewUrl
+                                self.audioModel.trackId = track.trackId
+                            }
                         }
                     }
                    
