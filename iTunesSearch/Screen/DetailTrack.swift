@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct DetailTrack: View {
+    
+    var track:Track
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(track.collectionName)
+            Text(track.artistName)
+            Text(track.trackName)
+            Text(track.country)
+        }
     }
 }
 
-struct DetailTrack_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailTrack()
-    }
-}

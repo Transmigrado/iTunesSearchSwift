@@ -14,7 +14,7 @@ struct ContentView: View {
     var container: Container
 
     var body: some View {
-        let view: TrackList = container.resolve(from: .root)
+        let view: SearchTrack = container.resolve(from: .root)
         return view
     }
 }

@@ -28,6 +28,7 @@
 		4F9C3FD023BEF879005DEB98 /* DetailTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FCF23BEF879005DEB98 /* DetailTrack.swift */; };
 		4F9C3FD223BEFE88005DEB98 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FD123BEFE88005DEB98 /* Empty.swift */; };
 		4F9C3FD423BF7585005DEB98 /* TrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FD323BF7585005DEB98 /* TrackList.swift */; };
+		4F9C3FD623BF8470005DEB98 /* SearchTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FD523BF8470005DEB98 /* SearchTrack.swift */; };
 		7B33E294F4EA04139A2FC655 /* Pods_iTunesSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19553BE3FB0AB17A68DA8C5A /* Pods_iTunesSearchTests.framework */; };
 		EA15B2A091C65356A9B6DA4A /* Pods_iTunesSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48667AC4F4E5385070AC1EDD /* Pods_iTunesSearchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		4F9C3FCF23BEF879005DEB98 /* DetailTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTrack.swift; sourceTree = "<group>"; };
 		4F9C3FD123BEFE88005DEB98 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		4F9C3FD323BF7585005DEB98 /* TrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackList.swift; sourceTree = "<group>"; };
+		4F9C3FD523BF8470005DEB98 /* SearchTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTrack.swift; sourceTree = "<group>"; };
 		57F468676CA2617425A55E36 /* Pods-iTunesSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchUITests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesSearchUITests/Pods-iTunesSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		720CA24F4066C3CF005ADBFC /* Pods_iTunesSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F6B96E16550D88A53242E0 /* Pods-iTunesSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchTests.release.xcconfig"; path = "Target Support Files/Pods-iTunesSearchTests/Pods-iTunesSearchTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		4F9C3FC823BEF33F005DEB98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F9C3FD323BF7585005DEB98 /* TrackList.swift */,
 				4F9C3FCC23BEF7FF005DEB98 /* Row.swift */,
 				4F9C3FD123BEFE88005DEB98 /* Empty.swift */,
 			);
@@ -233,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				4F9C3FCF23BEF879005DEB98 /* DetailTrack.swift */,
-				4F9C3FD323BF7585005DEB98 /* TrackList.swift */,
+				4F9C3FD523BF8470005DEB98 /* SearchTrack.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				4F9C3FD223BEFE88005DEB98 /* Empty.swift in Sources */,
 				4F9C3F8523BE7F89005DEB98 /* SceneDelegate.swift in Sources */,
 				4F9C3FBD23BEB0BF005DEB98 /* Page.swift in Sources */,
+				4F9C3FD623BF8470005DEB98 /* SearchTrack.swift in Sources */,
 				4F9C3F8723BE7F89005DEB98 /* ContentView.swift in Sources */,
 				4F9C3FBA23BEA06F005DEB98 /* Track.swift in Sources */,
 				4F9C3FCD23BEF7FF005DEB98 /* Row.swift in Sources */,

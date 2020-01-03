@@ -14,7 +14,7 @@ struct TrackList: View {
     
        var viewForResult : some View {
            List(model.tracks){ track in
-               NavigationLink(destination: DetailTrack()){
+            NavigationLink(destination: DetailTrack(track:track)){
                  Row(track: track)
                }
            }
@@ -24,7 +24,7 @@ struct TrackList: View {
            HStack {
               HStack {
                   Image(systemName: "magnifyingglass")
-               TextField("Buscar", text: self.$model.searchText)
+                  TextField("Buscar", text: self.$model.searchText)
                        .foregroundColor(.primary)
                   Button(action: {
                       self.model.searchText = ""
