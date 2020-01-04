@@ -24,13 +24,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         
+   
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        
         container.register(from: .trackModel, value: TrackModel(api: TrackApi()))
         container.register(from: .trackModelDetail, value: TrackModel(api: TrackApi()))
         container.register(from: .trackList, value: TrackList(container:container,model: container.resolve(from: .trackModel)))
         container.register(from: .trackListDetail, value: TrackList(container:container,model: container.resolve(from: .trackModelDetail)))
         container.register(from: .root, value: SearchTrack(container:container))
         
-        let contentView = ContentView(container:container)
+        let contentView = ContentView(container:container).environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

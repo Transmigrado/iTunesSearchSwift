@@ -33,6 +33,7 @@
 		4F9C3FDB23BFA0E0005DEB98 /* loading_music.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F9C3FDA23BFA0E0005DEB98 /* loading_music.json */; };
 		4F9C3FDD23BFE68C005DEB98 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FDC23BFE68C005DEB98 /* AudioModel.swift */; };
 		4F9C3FDF23C00E80005DEB98 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C3FDE23C00E80005DEB98 /* Favorites.swift */; };
+		4F9C406323C01EE4005DEB98 /* iTunesSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F9C406123C01EE4005DEB98 /* iTunesSearch.xcdatamodeld */; };
 		7B33E294F4EA04139A2FC655 /* Pods_iTunesSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19553BE3FB0AB17A68DA8C5A /* Pods_iTunesSearchTests.framework */; };
 		EA15B2A091C65356A9B6DA4A /* Pods_iTunesSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48667AC4F4E5385070AC1EDD /* Pods_iTunesSearchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		4F9C3FDA23BFA0E0005DEB98 /* loading_music.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_music.json; sourceTree = "<group>"; };
 		4F9C3FDC23BFE68C005DEB98 /* AudioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		4F9C3FDE23C00E80005DEB98 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		4F9C406223C01EE4005DEB98 /* TestCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestCoreData.xcdatamodel; sourceTree = "<group>"; };
 		57F468676CA2617425A55E36 /* Pods-iTunesSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchUITests.debug.xcconfig"; path = "Target Support Files/Pods-iTunesSearchUITests/Pods-iTunesSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		720CA24F4066C3CF005ADBFC /* Pods_iTunesSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F6B96E16550D88A53242E0 /* Pods-iTunesSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesSearchTests.release.xcconfig"; path = "Target Support Files/Pods-iTunesSearchTests/Pods-iTunesSearchTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				4F9C3F8823BE7F8A005DEB98 /* Assets.xcassets */,
 				4F9C3F8D23BE7F8A005DEB98 /* LaunchScreen.storyboard */,
 				4F9C3F9023BE7F8A005DEB98 /* Info.plist */,
+				4F9C406123C01EE4005DEB98 /* iTunesSearch.xcdatamodeld */,
 				4F9C3F8A23BE7F8A005DEB98 /* Preview Content */,
 			);
 			path = iTunesSearch;
@@ -524,6 +527,7 @@
 				4F9C3FC723BEE908005DEB98 /* Inject.swift in Sources */,
 				4F9C3FD023BEF879005DEB98 /* DetailTrack.swift in Sources */,
 				4F9C3F8323BE7F89005DEB98 /* AppDelegate.swift in Sources */,
+				4F9C406323C01EE4005DEB98 /* iTunesSearch.xcdatamodeld in Sources */,
 				4F9C3FC323BEB95D005DEB98 /* TrackModel.swift in Sources */,
 				4F9C3FD423BF7585005DEB98 /* TrackList.swift in Sources */,
 				4F9C3FB623BE8F8F005DEB98 /* TrackApi.swift in Sources */,
@@ -887,6 +891,19 @@
 			productName = URLImage;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4F9C406123C01EE4005DEB98 /* iTunesSearch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4F9C406223C01EE4005DEB98 /* TestCoreData.xcdatamodel */,
+			);
+			currentVersion = 4F9C406223C01EE4005DEB98 /* TestCoreData.xcdatamodel */;
+			path = iTunesSearch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4F9C3F7723BE7F89005DEB98 /* Project object */;
 }
