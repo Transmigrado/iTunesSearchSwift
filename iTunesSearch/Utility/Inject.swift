@@ -15,6 +15,7 @@ enum InjectName:String {
     case root
     case trackList
     case trackModel
+    case favoriteModel
     case detailTrack
     case trackModelDetail
     case trackListDetail

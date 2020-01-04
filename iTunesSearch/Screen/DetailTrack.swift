@@ -13,11 +13,10 @@ import Swinject
 struct DetailTrack: View {
     
     var container: Container
-    var track:Track
+    @ObservedObject var model : FavoriteModel
     
-    @Environment(\.managedObjectContext) var context
-    
-    
+    var track = Track()
+
     var list: some View {
       let view: TrackList = container.resolve(from: .trackListDetail)
       view.model.tracks = []

@@ -9,7 +9,13 @@
 import Foundation
 import SwiftUI
 import Combine
+import CoreData
 
 class FavoriteModel : ObservableObject {
     
+    var context : NSManagedObjectContext
+    
+    init(context: NSManagedObjectContext){
+        self.context = context
+    }
 }

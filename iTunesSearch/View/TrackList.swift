@@ -15,6 +15,14 @@ struct TrackList: View {
         @ObservedObject var model : TrackModel
         @ObservedObject var audioModel = AudioModel()
         
+    
+        func detail(track: Track) -> some View {
+            var detail : DetailTrack = container.resolve(from : .detailTrack)
+            detail.track = track
+            return detail
+        }
+              
+    
         var loadingView : some View {
             ZStack{
                LottieView()
@@ -25,14 +33,14 @@ struct TrackList: View {
                 self.model.page = self.model.page + 1
             }
         }
-       
+     
        var body: some View {
             GeometryReader { geometry in
                 
                 List{
                     
                     ForEach(self.model.tracks){ track in
-                        NavigationLink(destination: DetailTrack(container:self.container, track:track)){
+                        NavigationLink(destination: self.detail(track: track)){
                             Row(track: track, trackId: self.$audioModel.trackId, progress: self.$audioModel.progress){
                                 self.audioModel.audioUrl = track.previewUrl
                                 self.audioModel.trackId = track.trackId
