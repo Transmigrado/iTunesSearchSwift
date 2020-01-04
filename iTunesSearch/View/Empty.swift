@@ -15,9 +15,3 @@ struct Empty: View {
         }
     }
 }
-
-struct Empty_Previews: PreviewProvider {
-    static var previews: some View {
-        Empty()
-    }
-}
