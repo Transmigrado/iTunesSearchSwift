@@ -20,6 +20,7 @@ enum InjectName:String {
     case favorites
     case trackModelDetail
     case trackListDetail
+    case favoritesList
 }
 
 extension Container {

@@ -9,10 +9,10 @@
 import SwiftUI
 import Swinject
 
-struct TrackList<T:ListModel>: View {
+struct TrackList<T:ListModel & ObservableObject>: View {
         
         var container: Container
-        @ObservedObject var model : TrackModel
+        @ObservedObject var model : T
         @ObservedObject var audioModel = AudioModel()
     
         func detail(track: Track) -> some View {
@@ -29,7 +29,7 @@ struct TrackList<T:ListModel>: View {
             }
             .frame(minWidth: 0.0, maxWidth: .infinity)
             .onAppear{
-                self.model.page = self.model.page + 1
+                //self.model.page = self.model.page + 1
             }
         }
      

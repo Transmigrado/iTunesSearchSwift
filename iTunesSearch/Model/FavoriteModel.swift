@@ -12,6 +12,8 @@ import Combine
 import CoreData
 
 class FavoriteModel : ObservableObject, ListModel {
+    var page: Int = 0
+    
     
     @Published var tracks:[Track] = []
     
@@ -32,6 +34,7 @@ class FavoriteModel : ObservableObject, ListModel {
         item?.collectionName = track.collectionName
         item?.trackName = track.trackName
         item?.country = track.country
+        item?.artistName = track.artistName
         
         try! context.save()
     }
@@ -44,6 +47,15 @@ class FavoriteModel : ObservableObject, ListModel {
       
          do {
            let result = try self.context.fetch(request) as! [NSManagedObject]
+            self.tracks = result.map { fav in
+                let item = fav as! Favorite
+                var track = Track()
+                track.artworkUrl100 = item.artworkUrl100!
+                track.trackName = item.trackName!
+                track.collectionName = item.collectionName!
+                track.country = item.country!
+                return track
+            }
             debugPrint(result)
          } catch {
            

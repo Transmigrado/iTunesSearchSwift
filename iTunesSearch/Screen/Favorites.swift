@@ -14,7 +14,15 @@ struct Favorites: View {
     var container : Container
     @ObservedObject var model : FavoriteModel
     
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
-    }
+     var list: some View {
+       let view: TrackList<FavoriteModel> = container.resolve(from: .favoritesList)
+       return view
+     }
+      
+     var body: some View {
+         NavigationView{
+              list
+                .navigationBarTitle("Favoritos")
+         }
+     }
 }
