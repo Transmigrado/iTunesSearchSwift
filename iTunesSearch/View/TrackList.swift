@@ -29,7 +29,7 @@ struct TrackList<T:ListModel & ObservableObject>: View {
             }
             .frame(minWidth: 0.0, maxWidth: .infinity)
             .onAppear{
-                //self.model.page = self.model.page + 1
+                self.model.setPage(page:  self.model.getPage() + 1)
             }
         }
      

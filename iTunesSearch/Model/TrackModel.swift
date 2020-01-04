@@ -12,7 +12,6 @@ import Alamofire
 class TrackModel : ObservableObject, ListModel {
     
     
-    
     @Published var tracks:[Track] = []
     @Published var isLoading = false
     
@@ -38,6 +37,14 @@ class TrackModel : ObservableObject, ListModel {
     
     init(api : Api){
         self.api = api
+    }
+    
+    func getPage() -> Int {
+        page
+    }
+    
+    func setPage(page: Int) {
+        self.page = page
     }
     
     func getTracks() -> [Track] {

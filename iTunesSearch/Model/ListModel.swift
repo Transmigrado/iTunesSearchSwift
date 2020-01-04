@@ -9,6 +9,7 @@
 import Foundation
 
 protocol ListModel {
-    func getTracks()->[Track]
-    var page : Int {get set}
+    func getTracks() -> [Track]
+    func getPage() -> Int
+    func setPage(page: Int)
 }

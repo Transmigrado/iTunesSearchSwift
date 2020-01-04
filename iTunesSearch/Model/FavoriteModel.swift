@@ -12,7 +12,6 @@ import Combine
 import CoreData
 
 class FavoriteModel : ObservableObject, ListModel {
-    var page: Int = 0
     
     
     @Published var tracks:[Track] = []
@@ -22,6 +21,14 @@ class FavoriteModel : ObservableObject, ListModel {
     init(context: NSManagedObjectContext){
         self.context = context
         self.retrieve()
+    }
+    
+    func getPage() -> Int {
+       0
+    }
+   
+    func setPage(page: Int) {
+ 
     }
     
     func getTracks() -> [Track] {
@@ -37,6 +44,8 @@ class FavoriteModel : ObservableObject, ListModel {
         item?.artistName = track.artistName
         
         try! context.save()
+        
+        retrieve()
     }
     
     func retrieve(){
