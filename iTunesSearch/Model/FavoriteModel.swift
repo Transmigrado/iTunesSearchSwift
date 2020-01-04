@@ -37,6 +37,7 @@ class FavoriteModel : ObservableObject, ListModel {
     
     func favorite(track: Track){
         let item = NSEntityDescription.insertNewObject(forEntityName: "Favorite", into: context) as? Favorite
+        
         item?.artworkUrl100 = track.artworkUrl100
         item?.collectionName = track.collectionName
         item?.trackName = track.trackName
@@ -47,6 +48,20 @@ class FavoriteModel : ObservableObject, ListModel {
         try! context.save()
         
         retrieve()
+    }
+    
+    func remove(track : Track){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
+        request.predicate = NSPredicate(format: "trackId == \(track.trackId)")
+        
+        do {
+            let result = try self.context.fetch(request) as! [NSManagedObject]
+            context.delete(result.first!)
+            retrieve()
+        } catch {
+          
+        
+        }
     }
     
     func retrieve(){

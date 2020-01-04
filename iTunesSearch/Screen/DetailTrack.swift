@@ -58,7 +58,12 @@ struct DetailTrack: View {
                 Image(systemName: isFavorite ? "star.fill" : "star")
                     .foregroundColor(.yellow)
                     .onTapGesture {
-                        self.model.favorite(track: self.track)
+                        if self.isFavorite {
+                            self.model.remove(track: self.track)
+                        } else {
+                            self.model.favorite(track: self.track)
+                        }
+                        
                     }
                 
             }
