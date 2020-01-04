@@ -28,6 +28,8 @@ target 'iTunesSearch' do
          pod 'Quick'
          pod 'Nimble'
          pod 'Swinject'
+         pod 'lottie-ios'
+         pod 'SwiftAudio', '~> 0.11.2'
   end
 
 end

@@ -48,9 +48,16 @@ class TrackApiTest: QuickSpec {
         }
         
         it("fetch correctly data when searchText change"){
-          
             let model : TrackModel = container.resolve(from: .trackModel)
             model.searchText = "Billie Eilish"
+            let firstItem = model.tracks.first
+            expect(firstItem?.artistName).to(equal("Californication"))
+        }
+        
+        it("fetch correctly data when searchText change"){
+            let model : TrackModel = container.resolve(from: .trackModel)
+            model.setPage(page: 1)
+            
             let firstItem = model.tracks.first
             expect(firstItem?.artistName).to(equal("Californication"))
         }
