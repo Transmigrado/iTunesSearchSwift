@@ -16,6 +16,15 @@ struct DetailTrack: View {
     @ObservedObject var model : FavoriteModel
     
     var track = Track()
+    
+    private var isFavorite : Bool {
+        get {
+            model.tracks.contains { track in
+                debugPrint( self.track.trackId, track.trackId)
+                return self.track.trackId == track.trackId
+            }
+        }
+    }
 
     var list: some View {
       let view: TrackList<TrackModel> = container.resolve(from: .trackListDetail)
@@ -47,7 +56,7 @@ struct DetailTrack: View {
                     .bold()
                     .font(.system(size: 22.0))
                  Spacer()
-                 Image(systemName: "star")
+                Image(systemName: isFavorite ? "star.fill" : "star")
                     .foregroundColor(.yellow)
                     .onTapGesture {
                         self.model.favorite(track: self.track)

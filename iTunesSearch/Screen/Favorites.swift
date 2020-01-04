@@ -12,7 +12,6 @@ import Swinject
 struct Favorites: View {
     
     var container : Container
-    @ObservedObject var model : FavoriteModel
     
      var list: some View {
        let view: TrackList<FavoriteModel> = container.resolve(from: .favoritesList)

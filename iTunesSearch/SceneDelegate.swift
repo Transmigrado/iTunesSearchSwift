@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         container.register(from: .favoritesList, value: TrackList<FavoriteModel>(container:container,model: container.resolve(from: .favoriteModel)))
         
-        container.register(from: .favorites, value: Favorites(container:container, model:  container.resolve(from: .favoriteModel)))
+        container.register(from: .favorites, value: Favorites(container:container))
         
         container.register(from: .root, value: SearchTrack(container:container))
         container.register(from: .detailTrack, value: DetailTrack(container: container, model:  container.resolve(from: .favoriteModel)))

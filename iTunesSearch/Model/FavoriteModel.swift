@@ -42,6 +42,7 @@ class FavoriteModel : ObservableObject, ListModel {
         item?.trackName = track.trackName
         item?.country = track.country
         item?.artistName = track.artistName
+        item?.trackId = Int64(track.trackId)
         
         try! context.save()
         
@@ -55,7 +56,7 @@ class FavoriteModel : ObservableObject, ListModel {
          
       
          do {
-           let result = try self.context.fetch(request) as! [NSManagedObject]
+            let result = try self.context.fetch(request) as! [NSManagedObject]
             self.tracks = result.map { fav in
                 let item = fav as! Favorite
                 var track = Track()
@@ -63,9 +64,10 @@ class FavoriteModel : ObservableObject, ListModel {
                 track.trackName = item.trackName!
                 track.collectionName = item.collectionName!
                 track.country = item.country!
+                track.trackId = Int(item.trackId)
                 return track
             }
-            debugPrint(result)
+            debugPrint(self.tracks)
          } catch {
            
          
