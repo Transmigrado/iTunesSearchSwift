@@ -18,6 +18,7 @@ struct DetailTrack: View {
     
     var list: some View {
       let view: TrackList = container.resolve(from: .trackListDetail)
+      view.model.tracks = []
       view.model.searchText = track.collectionName
       return view
     }
@@ -40,9 +41,13 @@ struct DetailTrack: View {
         VStack(alignment: .leading){
           header
           VStack(alignment: .leading){
-            Text(track.trackName)
-                .bold()
-                .font(.system(size: 22.0))
+            HStack{
+                Text(track.trackName)
+                    .bold()
+                    .font(.system(size: 22.0))
+                 Spacer()
+                 Image(systemName: "star.fill")
+            }
             Text(track.collectionName)
             Text(track.artistName)
             Text("Pais: \(track.country)")
