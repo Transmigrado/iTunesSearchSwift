@@ -17,5 +17,31 @@ class FavoriteModel : ObservableObject {
     
     init(context: NSManagedObjectContext){
         self.context = context
+        self.retrieve()
+    }
+    
+    func favorite(track: Track){
+        let item = NSEntityDescription.insertNewObject(forEntityName: "Favorite", into: context) as? Favorite
+        item?.artworkUrl100 = track.artworkUrl100
+        item?.collectionName = track.collectionName
+        item?.trackName = track.trackName
+        item?.country = track.country
+        
+        try! context.save()
+    }
+    
+    func retrieve(){
+        
+         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
+         request.returnsObjectsAsFaults = false
+         
+      
+         do {
+           let result = try self.context.fetch(request) as! [NSManagedObject]
+            debugPrint(result)
+         } catch {
+           
+         
+         }
     }
 }
