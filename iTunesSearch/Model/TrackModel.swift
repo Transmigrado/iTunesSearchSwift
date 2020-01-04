@@ -24,11 +24,10 @@ class TrackModel : ObservableObject, ListModel {
     var searchText = "" {
         didSet {
             page = 0
+            tracks = []
             if searchText != ""{
                 retrieve(term: searchText)
-            } else {
-                tracks = []
-            }
+            } 
             
         }
     }

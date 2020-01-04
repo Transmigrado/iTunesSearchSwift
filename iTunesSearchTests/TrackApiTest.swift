@@ -72,7 +72,7 @@ class TrackApiTest: QuickSpec {
             it("set tracks empty when search text is empty"){
                let model : TrackModel = container.resolve(from: .trackModel)
                model.searchText = "Billie Eilish"
-               expect(model.tracks.count).to(equal(2))
+               expect(model.tracks.count).to(equal(1))
                 
                model.searchText = ""
                expect(model.tracks.count).to(equal(0))
