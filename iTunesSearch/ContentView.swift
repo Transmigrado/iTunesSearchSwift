@@ -18,6 +18,11 @@ struct ContentView: View {
         return view
     }
     
+    var favorites : some View {
+        let view: Favorites = container.resolve(from: .favorites)
+        return view
+    }
+    
     var body: some View {
         
         
@@ -30,7 +35,7 @@ struct ContentView: View {
                     }
                 })
                 .tag(0)
-            Favorites()
+            favorites
                 .tabItem({
                     VStack(alignment: .center){
                         Image(systemName: "star.fill")

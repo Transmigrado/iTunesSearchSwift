@@ -18,7 +18,7 @@ struct DetailTrack: View {
     var track = Track()
 
     var list: some View {
-      let view: TrackList = container.resolve(from: .trackListDetail)
+      let view: TrackList<TrackModel> = container.resolve(from: .trackListDetail)
       view.model.tracks = []
       view.model.searchText = track.collectionName
       return view
@@ -49,6 +49,9 @@ struct DetailTrack: View {
                  Spacer()
                  Image(systemName: "star")
                     .foregroundColor(.yellow)
+                    .onTapGesture {
+                        self.model.favorite(track: self.track)
+                    }
                 
             }
             Text(track.collectionName)

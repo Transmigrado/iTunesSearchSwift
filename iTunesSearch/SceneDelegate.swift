@@ -29,8 +29,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         container.register(from: .trackModel, value: TrackModel(api: TrackApi()))
         container.register(from: .trackModelDetail, value: TrackModel(api: TrackApi()))
         container.register(from: .favoriteModel, value: FavoriteModel(context: context))
-        container.register(from: .trackList, value: TrackList(container:container,model: container.resolve(from: .trackModel)))
-        container.register(from: .trackListDetail, value: TrackList(container:container,model: container.resolve(from: .trackModelDetail)))
+        
+        container.register(from: .trackList, value: TrackList<TrackModel>(container:container,model: container.resolve(from: .trackModel)))
+        container.register(from: .trackListDetail, value: TrackList<TrackModel>(container:container,model: container.resolve(from: .trackModelDetail)))
+        
+        container.register(from: .favorites, value: Favorites(container:container, model:  container.resolve(from: .favoriteModel)))
+        
         container.register(from: .root, value: SearchTrack(container:container))
         container.register(from: .detailTrack, value: DetailTrack(container: container, model:  container.resolve(from: .favoriteModel)))
         

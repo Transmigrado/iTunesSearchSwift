@@ -11,13 +11,19 @@ import SwiftUI
 import Combine
 import CoreData
 
-class FavoriteModel : ObservableObject {
+class FavoriteModel : ObservableObject, ListModel {
+    
+    @Published var tracks:[Track] = []
     
     var context : NSManagedObjectContext
     
     init(context: NSManagedObjectContext){
         self.context = context
         self.retrieve()
+    }
+    
+    func getTracks() -> [Track] {
+        tracks
     }
     
     func favorite(track: Track){

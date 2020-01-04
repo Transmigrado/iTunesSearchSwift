@@ -37,7 +37,7 @@ struct SearchTrack: View {
  }
     
   var list: some View {
-    let view: TrackList = container.resolve(from: .trackList)
+    let view: TrackList<TrackModel> = container.resolve(from: .trackList)
     view.model.searchText = self.searchText
     return view
   }
