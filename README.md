@@ -6,7 +6,8 @@
 
 ## Demo
 
-![enter image description here](https://github.com/Transmigrado/iTunesSearchSwift/blob/master/Demo-Images/ezgif-6-11892d5a51cb.gif?raw=true =300x646) ![enter image description here](https://github.com/Transmigrado/iTunesSearchSwift/blob/master/Demo-Images/ezgif-6-506d493b755d.gif?raw=true =300x646)
+![ScreenShoot1](https://github.com/Transmigrado/iTunesSearchSwift/blob/master/Demo-Images/ezgif-6-11892d5a51cb.gif?raw=true){:height="646px" width="300px"}
+![ScreenShoot2](https://github.com/Transmigrado/iTunesSearchSwift/blob/master/Demo-Images/ezgif-6-506d493b755d.gif?raw=true){:height="646px" width="300px"}
 ## Librerias usadas
 
 **Alamofire**
