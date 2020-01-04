@@ -30,10 +30,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         container.register(from: .trackModelDetail, value: TrackModel(api: TrackApi()))
         container.register(from: .favoriteModel, value: FavoriteModel(context: context))
         
-        container.register(from: .trackList, value: TrackList<TrackModel>(container:container,model: container.resolve(from: .trackModel)))
-        container.register(from: .trackListDetail, value: TrackList<TrackModel>(container:container,model: container.resolve(from: .trackModelDetail)))
+        container.register(from: .trackList, value: TrackList<TrackModel>(container:container, withPaging: true, model: container.resolve(from: .trackModel)))
+        container.register(from: .trackListDetail, value: TrackList<TrackModel>(container:container, withPaging: true, model: container.resolve(from: .trackModelDetail)))
         
-        container.register(from: .favoritesList, value: TrackList<FavoriteModel>(container:container,model: container.resolve(from: .favoriteModel)))
+        container.register(from: .favoritesList, value: TrackList<FavoriteModel>(container:container, withPaging: false, model: container.resolve(from: .favoriteModel)))
         
         container.register(from: .favorites, value: Favorites(container:container))
         

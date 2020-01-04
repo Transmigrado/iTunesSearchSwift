@@ -20,8 +20,7 @@ struct DetailTrack: View {
     private var isFavorite : Bool {
         get {
             model.tracks.contains { track in
-                debugPrint( self.track.trackId, track.trackId)
-                return self.track.trackId == track.trackId
+               self.track.trackId == track.trackId
             }
         }
     }

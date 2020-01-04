@@ -12,6 +12,7 @@ import Swinject
 struct TrackList<T:ListModel & ObservableObject>: View {
         
         var container: Container
+        var withPaging : Bool
         @ObservedObject var model : T
         @ObservedObject var audioModel = AudioModel()
     
@@ -44,7 +45,7 @@ struct TrackList<T:ListModel & ObservableObject>: View {
                    }
                }
               
-               if self.model.getTracks().count > 0 {
+               if self.model.getTracks().count > 0 && withPaging {
                    self.loadingView
                }
            }

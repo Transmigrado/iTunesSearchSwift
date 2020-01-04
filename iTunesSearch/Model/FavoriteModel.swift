@@ -67,7 +67,6 @@ class FavoriteModel : ObservableObject, ListModel {
                 track.trackId = Int(item.trackId)
                 return track
             }
-            debugPrint(self.tracks)
          } catch {
            
          
