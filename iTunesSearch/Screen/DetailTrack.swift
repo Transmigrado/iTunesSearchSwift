@@ -15,6 +15,8 @@ struct DetailTrack: View {
     var container: Container
     var track:Track
     
+    @Environment(\.managedObjectContext) var context
+    
     
     var list: some View {
       let view: TrackList = container.resolve(from: .trackListDetail)
@@ -46,7 +48,9 @@ struct DetailTrack: View {
                     .bold()
                     .font(.system(size: 22.0))
                  Spacer()
-                 Image(systemName: "star.fill")
+                 Image(systemName: "star")
+                    .foregroundColor(.yellow)
+                
             }
             Text(track.collectionName)
             Text(track.artistName)
@@ -58,5 +62,6 @@ struct DetailTrack: View {
       .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 0.0, maxHeight: .infinity, alignment: .topLeading)
  
     }
+    
 }
 

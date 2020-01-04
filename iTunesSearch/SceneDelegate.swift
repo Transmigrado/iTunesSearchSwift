@@ -24,9 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         
-   
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
         
         container.register(from: .trackModel, value: TrackModel(api: TrackApi()))
         container.register(from: .trackModelDetail, value: TrackModel(api: TrackApi()))
