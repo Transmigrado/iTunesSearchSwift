@@ -45,7 +45,7 @@ struct TrackList<T:ListModel & ObservableObject>: View {
                    }
                }
               
-               if self.model.getTracks().count > 0 && withPaging {
+               if !self.model.getTracks().isEmpty && withPaging {
                    self.loadingView
                }
            }
