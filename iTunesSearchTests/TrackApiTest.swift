@@ -61,5 +61,30 @@ class TrackApiTest: QuickSpec {
             let firstItem = model.tracks.first
             expect(firstItem?.artistName).to(equal("Californication"))
         }
+        
+        it("get correct page when is setted"){
+            let model : TrackModel = container.resolve(from: .trackModel)
+            model.setPage(page: 10)
+            expect(model.getPage()).to(equal(10))
+        }
+        
+        describe("reset values when search text is empty"){
+            it("set tracks empty when search text is empty"){
+               let model : TrackModel = container.resolve(from: .trackModel)
+               model.searchText = "Billie Eilish"
+               expect(model.tracks.count).to(equal(2))
+                
+               model.searchText = ""
+               expect(model.tracks.count).to(equal(0))
+           }
+            
+            it("set page in 0 when search text is empty"){
+                let model : TrackModel = container.resolve(from: .trackModel)
+                model.setPage(page: 10)
+                expect(model.getPage()).to(equal(10))
+                model.searchText = ""
+                expect(model.getPage()).to(equal(0))
+            }
+        }
     }
 }
